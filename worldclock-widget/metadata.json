@@ -1,0 +1,30 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "you@example.com",
+        "Name": "Your Name"
+      }
+    ],
+    "Category": "Date and Time",
+    "Description": "Analog clock with customizable timezone",
+    "EnabledByDefault": true,
+    "FormFactors": [
+      "tablet",
+      "handset",
+      "desktop"
+    ],
+    "Icon": "preferences-system-time",
+    "Id": "org.kde.plasma.worldclock",
+    "License": "GPL-2.0+",
+    "Name": "World Clock",
+    "Website": "https://kde.org"
+  },
+  "X-Plasma-API": "declarativeappletscript",
+  "X-Plasma-MainScript": "ui/main.qml",
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-Plasma-Provides": [
+    "org.kde.plasma.time"
+  ]
+}

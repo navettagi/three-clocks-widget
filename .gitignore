@@ -1,0 +1,23 @@
+# File temporanei di sistema
+.DS_Store
+Thumbs.db
+
+# File temporanei di backup
+*~
+*.bak
+*.swp
+*.tmp
+
+# File di configurazione locali
+.vscode/
+.idea/
+.kate-swp/
+*.user
+
+# File di compilazione
+*.qmlc
+*.jsc
+*.qrc.depends
+
+# Directory esterne
+plasma-workspace/
