@@ -34,26 +34,31 @@ Item {
     // Update the clock time based on absolute UTC offset
     function updateTime() {
         var date = new Date();
-        // Get current UTC time
+        
+        // Get current UTC time in total minutes
         var utcHours = date.getUTCHours();
         var utcMinutes = date.getUTCMinutes();
         var utcSeconds = date.getUTCSeconds();
+        var utcTotalMinutes = utcHours * 60 + utcMinutes;
         
-        // Apply offset to get the destination timezone
-        var destHours = utcHours + Math.floor(hoursOffset);
-        var destMinutes = utcMinutes + Math.round((hoursOffset - Math.floor(hoursOffset)) * 60);
+        // Convert offset to minutes (e.g., 5.5 hours = 330 minutes)
+        var offsetMinutes = Math.round(hoursOffset * 60);
         
-        // Handle minute overflow
-        if (destMinutes >= 60) {
-            destHours += 1;
-            destMinutes -= 60;
-        } else if (destMinutes < 0) {
-            destHours -= 1;
-            destMinutes += 60;
+        // Apply offset to get destination time in total minutes
+        var destTotalMinutes = utcTotalMinutes + offsetMinutes;
+        
+        // Convert back to hours and minutes
+        var destHours = Math.floor(destTotalMinutes / 60) % 24;
+        var destMinutes = destTotalMinutes % 60;
+        
+        // Handle negative time (rarely happens)
+        if (destTotalMinutes < 0) {
+            destHours = (destHours + 24) % 24;
+            if (destMinutes < 0) {
+                destMinutes += 60;
+                destHours = (destHours - 1 + 24) % 24;
+            }
         }
-        
-        // Handle hour overflow
-        destHours = (destHours + 24) % 24;
         
         hours = destHours;
         minutes = destMinutes;

@@ -16,9 +16,9 @@
       "desktop"
     ],
     "Icon": "preferences-system-time",
-    "Id": "org.kde.plasma.threeclocks",
+    "Id": "org.kde.plasma.navettaworldclock",
     "License": "GPL-2.0+",
-    "Name": "Three World Clocks",
+    "Name": "Navetta World Clock",
     "Website": "https://kde.org"
   },
   "X-Plasma-API": "declarativeappletscript",

@@ -18,7 +18,7 @@ PlasmoidItem {
     // Absolute offsets from UTC (will handle DST correctly)
     property double romaOffset: 2  // +2 during summer (DST)
     property double dohaOffset: 3  // Always +3
-    property double ahmedabadOffset: 5.5  // Always +5:30
+    property double ahmedabadOffset: 5.5  // Always +5:30 (5 hours and 30 minutes)
     
     property bool showSecondHand: Plasmoid.configuration.showSecondHand
     
